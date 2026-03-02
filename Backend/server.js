@@ -1,6 +1,7 @@
 import 'dotenv/config'
 import express from 'express'
 import { PrismaClient } from '@prisma/client'
+import cors from 'cors'
 
 
 const prisma = new PrismaClient()
@@ -8,6 +9,7 @@ const prisma = new PrismaClient()
 const app = express()
 
 app.use(express.json())
+app.use(cors()) // configurar o enderço do front certo, sem endereço qualquer front tem acesso.
 
 
 //Rotas =>>
